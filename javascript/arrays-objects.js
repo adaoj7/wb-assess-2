@@ -5,13 +5,15 @@
 // - the boolean value true
 function myArr() {
   // Replace this with your code
+  let newArr = [4,'abc',['apple','berry','cherry'],true]
+  return newArr
 }
 
 // The following array, `nestedLetters`, contains many levels of nested arrays.
 // Return the letter 'z' from `nestedLetters` using bracket notation.
 function getZ() {
   const nestedLetters = ['m', 'g', 'e', 'q', 'h', ['n', 'b', ['v', 'z', 'y', 'r']], 'a'];
-
+  return nestedLetters[5][2][1]
   // Replace this with your code
 }
 
@@ -23,6 +25,8 @@ function flatAnimals() {
   const desert = ['rattlesnake', 'coyote'];
 
   // Replace this with your code
+  let habitats =[...forest, ...ocean, ...savannah, ...desert]
+  return habitats
 }
 
 // Now use the spread operator to return a copy of the animals array with 'elephant' at
@@ -31,7 +35,10 @@ function animalsWithElephant() {
   const animals = ['aardvark', 'bear', 'cat'];
 
   // Replace this with your code
+  let animalsEle = [...animals, 'elephant']
+  return animalsEle
 }
+// console.log(animalsWithElephant())
 
 // You don't agree with the rating for Splendor,
 // delete the rating property off of the gameInfo object.
@@ -46,7 +53,7 @@ function improveGameRating() {
   };
 
   // Replace this with your code
-
+  delete gameInfo.rating
   return gameInfo;
 }
 
@@ -64,9 +71,17 @@ function evenShapes() {
   };
 
   // Replace this with your code
-
+  // for (i = )
+  for (const prop in shapes){
+    if(shapes[prop] % 2 !== 0){ 
+      delete shapes[prop]
+      
+    }
+  }
+  // console.log(shapes)
   return shapes;
 }
+// console.log(evenShapes())
 
 // Write a for loop that loops over the classes array,
 // nest a for in loop to loop over each object.
@@ -101,10 +116,24 @@ function betterCourses() {
   ];
 
   // Replace this with your code
-
+    courses.forEach(ele => {
+      for (const prop in ele){
+        if (ele[prop] === true){
+          ele[prop] = false
+        }
+      }
+    })
+  // for (let i = 0; i < courses.length; i++){
+  //   for (let prop in obj){
+  //     if (obj[prop] === true) {
+  //       obj[prop] = false
+  //     }
+  //   }
+  // }
+  // console.log(courses)
   return courses;
 }
-
+console.log(betterCourses())
 // Use nested for loops to compare the letters in the lettersToPair array below.
 // When you find a pair, push the indexes of the letters into the pairsArray as an array.
 // For example, looping the array ['b', 'x', 'x', 'b']
@@ -114,7 +143,7 @@ function findPairs() {
   const pairsArray = [];
 
   // Replace this with your code
-
+  
   return pairsArray;
 }
 
