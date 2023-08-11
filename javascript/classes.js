@@ -7,6 +7,12 @@
 // - Bicycles come in different colors (ex.: red, silver, blue…)
 class Bicycle {
   // Replace this with your code
+  constructor (color,manufacturer){
+    this.numWheels = 2
+    this.color = color
+    this.manufacturer = manufacturer
+  }
+
 }
 
 // This User class is intended to be used in a web application where users can
@@ -26,10 +32,16 @@ class User {
 
   processChangePassword(currentPassword, newPassword) {
     // Replace this with your code
+    if (this.password === currentPassword){
+      this.password = newPassword
+      return true
+    } else {
+      return false
+    }
   }
 }
 
-// This Book class is complete -- you don't need to change anything here. Instad,
+// This Book class is complete -- you don't need to change anything here. Instead,
 // you'll use it to implement two methods on the Library class below:
 //
 // - createAndAddBook: This method should create a new Book instance with the
@@ -51,12 +63,20 @@ class Library {
 
   createAndAddBook(title, author) {
     // Replace this with your code
+    this.books.push(new Book(title, author))
   }
 
   findBooksByAuthor(author) {
     // Replace this with your code
+    let authorBook = this.books.filter((ele,index) => {
+      // console.log(ele.length)
+      return ele.author === author
+    })
+    return authorBook
   }
 }
+
+
 
 // You might be familiar with the fact that, in geometry, squares are rectangles
 // with four equal sides. In other words, Square is a subclass of Rectangle.
@@ -87,6 +107,19 @@ class Rectangle {
 
 class Square extends Rectangle {
   // Replace this with your code
+  constructor(length){
+    super(length)
+    this.width = length
+
+  }
+
+  getArea(){
+    if (this.length === this.width){
+      return this.length * this.width
+    } else {
+      return undefined
+    }
+  }
 }
 
 export { Bicycle, Book, Library, Rectangle, Square, User };

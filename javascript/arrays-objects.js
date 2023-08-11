@@ -150,16 +150,19 @@ function findPairs() {
   const pairsArray = [];
 
   // Replace this with your code
-  lettersToPair.forEach((ele, index) => {
-    //  pairsArray = lettersToPair.filter(eleComp => {
-    //   if(ele === eleComp){
-
-    for (let i = 0; i < lettersToPair.length; i++)
-      if (ele === lettersToPair[i]) {
-        if (i !== index) {
-          pairsArray.push([index, i], i);
-        }
+  lettersToPair.forEach((letter, index) => {
+    lettersToPair.forEach((secondLetter, secondIndex) => {
+      if (index < secondIndex && letter === secondLetter){
+      // It just needs this, but I learned this function using chatGPT which is cheating :)
+      // pairsArray.push([index,secondIndex])
       }
+    })
+    // for (let i = 0 + 1; i < lettersToPair.length; i++)
+    //   if (ele === lettersToPair[i]) {
+    //     if (i !== index) {
+    //       pairsArray.push([index, i]);
+    //     }
+    //   }
   });
   // console.log(pairsArray)
   return pairsArray;
@@ -207,7 +210,7 @@ function getZipAndState() {
   console.log(newVar);
   return newVar;
 }
-console.log(getZipAndState());
+// console.log(getZipAndState());
 
 // Helen has a daughter named Ellen that lives at the same address.
 // Return an object with Helen's info in it using the spread operator on the
