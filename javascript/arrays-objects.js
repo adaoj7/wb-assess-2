@@ -143,10 +143,15 @@ function findPairs() {
   const pairsArray = [];
 
   // Replace this with your code
-  
+  lettersToPair.forEach(ele =>{
+    for (i = 0; i < lettersToPair.length; )
+      if (ele === i){
+        pairsArray.push([ele,i])
+      }
+  })
   return pairsArray;
 }
-
+console.log(findPairs())
 // For these problems we will be using the objects below, contactInfo and shippingInfo,
 // as well as objects that you will make based off these two.
 const contactInfo = {
