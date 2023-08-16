@@ -95,7 +95,7 @@ function getSaleProducts() {
   let saleProducts = products.map((obj,index) => {
     // return products[index].price = 
     // products.push({2:2})
-    obj.price = obj.price *= .75
+    obj.price *= .75
     return obj
   })
   return saleProducts
