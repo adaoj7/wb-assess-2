@@ -12,3 +12,62 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+body{
+   min-height: 100vh;
+   width: auto;
+   overflow-x: hidden;
+}
+
+
+/* Header */
+
+#headerBox {
+   height: 100px;
+   width: 99vw;
+   top: 0;
+   position: fixed;
+   background-color: rgb(37, 37, 37);
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+#title{
+   width: auto;
+   margin: 30px;
+   display: flex;
+   align-items: center;
+   white-space: nowrap;
+   font-size: 26pt;
+   color: rgb(42, 171, 226);
+}
+
+#options{
+   display: flex;
+   align-items: center;
+}
+
+.hButton{
+   white-space: nowrap;
+   margin: 30px;
+   font-size: 12pt;
+   color: white;
+}
+
+/* main */
+main {
+   margin-top: 100px;
+   display: flex;
+   font-size: 14pt;
+}
+.sTitle{
+   margin: 15px;
+   font-size: 16pt;
+   font-weight: bold;
+}
+
+/* footer */
+footer{
+   display: flex;
+   position: absolute,0;
+}
